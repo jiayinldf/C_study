@@ -17,4 +17,20 @@ int main()
 }
 */
 
-//例2.19 求多项式的值
+/*例2.19 求多项式的值
+#include<stdio.h>
+int main()
+{
+	int sign = 1;
+	double deno = 2.0, sum = 1.0, term;
+	while (deno<=100)
+	{
+		sign = -sign;
+		term = sign / deno;
+		sum = sum + term;
+		deno = deno + 1;
+	}
+	printf("多项式的和是：%f",sum);
+	return 0;
+}
+*/

@@ -130,6 +130,7 @@
     <ClCompile Include="第一章例题.c" />
     <ClCompile Include="第三章例题.c" />
     <ClCompile Include="第二章例题.c" />
+    <ClCompile Include="第五章.c" />
     <ClCompile Include="第四章例题.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

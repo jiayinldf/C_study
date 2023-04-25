@@ -409,7 +409,7 @@ int main()
 }
 */
 
-//例4.10 求解运费
+/*例4.10 求解运费
 #include<stdio.h>
 int main()
 {
@@ -443,6 +443,7 @@ int main()
 
 
 	}
+	*/
 
 
 

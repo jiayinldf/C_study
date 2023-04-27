@@ -27,7 +27,7 @@
     <ClCompile Include="第四章例题.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="第五章.c">
+    <ClCompile Include="第五章例题.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

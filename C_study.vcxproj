@@ -127,11 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="第一章例题.c" />
-    <ClCompile Include="第三章例题.c" />
-    <ClCompile Include="第二章例题.c" />
-    <ClCompile Include="第五章例题.c" />
-    <ClCompile Include="第四章例题.c" />
+    <ClCompile Include="第1章例题.c" />
+    <ClCompile Include="第3章例题.c" />
+    <ClCompile Include="第2章例题.c" />
+    <ClCompile Include="第5章例题.c" />
+    <ClCompile Include="第6章例题.c" />
+    <ClCompile Include="第4章例题.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

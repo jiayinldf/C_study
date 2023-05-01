@@ -408,4 +408,72 @@ int main()
 //
 //}
 
-//例6.8
+/*例6.8 输入一行字符，统计有多少个单词
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[55];
+	int i, num=0,word=0;
+	gets(a);
+	for ( i = 0; (a[i]!='\0'); i++)
+	{
+		printf("%c", a[i]);
+	}
+	printf("\n");
+
+	for ( i = 0; (a[i]!='\0'); i++)
+	{
+		if (a[i]==' ')
+		{
+			word = 0;
+		}
+		else if (word == 0)
+		{
+			word = 1;
+			num = num + 1;
+		}
+		printf("%d", num);
+	}
+	printf("\n");
+	printf("%d", num);
+	return 0;
+}
+*/
+
+/*例6.9 有三个字符串，要求找出其中最大者
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char str[3][20], string[20];
+	int i;
+
+	for ( i = 0; i < 3; i++)
+	{
+		gets(str[i]);
+	}
+	for ( i = 0; i < 3; i++)
+	{
+		puts("\n");
+		printf("%c",str[i][i]);//要输出单个字符，不能用%s，只能用%c
+	}
+
+	puts("\n");
+
+	for (i = 0; i < 2; i++)
+	{
+		if (strcmp(str[i + 1], str[i]) < 0)
+		{
+			strcpy(str[i+1], str[i]);
+		}
+		
+	}
+
+	puts(str[2]);
+
+
+	return 0;
+}
+*/

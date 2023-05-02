@@ -33,5 +33,14 @@
     <ClCompile Include="第6章例题.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="第7章例题.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="print_star.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="print_message.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

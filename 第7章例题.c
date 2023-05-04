@@ -190,5 +190,146 @@ int fac(int n)
 
 
 
-//例7.9 
+//例7.9 输入10个数，要求输出其中值最大的元素和该数是第几个数
+/*#include<stdio.h>
+int main()
+{
+	int max(int, int);
+	int a[10], m, n, i;
+	printf("please enter 10 number\n");
+	for ( i = 0; i < 10; i++)
+	{
+		scanf_s("%d", &a[i]);
+	}
+	
+	printf("The 10 numbers are:\n");
+	for ( i = 0; i < 10; i++)
+	{
+		printf("%d ", a[i]);
+	}
+	puts("\n");
+
+	for ( i = 1,m=a[0],n=0; i < 10; i++)
+	{
+		if (max(m,a[i])>m)
+		{
+			m = a[i];
+			n = i;
+		} 
+
+	}
+	printf("最大值是%d,序号是%d", m, n);
+
+}
+
+int max(int x, int y)
+{
+	return(x>y? x:y);
+}
+*/
+
+//例7.10 有一个一维数组score，内放10个学生成绩，求平均成绩
+
+/* #define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	float average(float array[10]);
+	int i=0;
+	float score[10];
+	puts("please enter 10 numbers\n");
+	for (size_t i = 0; i < 10; i++)
+	{
+		scanf("%f", &score[i]);
+	}
+	puts("\n");
+
+	while (i<10)
+	{
+		printf("%f	", score[i]);
+		i++;
+	}
+
+	//求平均成绩
+	puts("\n");
+	printf("平均成绩=%f\n", average(score));
+	return 0;
+
+}
+
+
+float average(float array[10])
+{
+	int i;
+	float sum, average;
+	for ( i = 1,sum = array[0]; i < 10; i++)
+	{
+		sum = sum + array[i];
+
+	}
+	average = sum / 10;
+	return average;
+}
+
+*/
+
+//例7.11 有两个班级，分别为5名和10名学生，调用一个average函数，分别求这两个班的学生的平均成绩。
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+float average(float array[], int n)
+{
+	int i;
+	float sum=array[0], average;
+	for (size_t i = 1; i < n; i++)
+	{
+		sum += array[i];
+
+	}
+	average = sum / n;
+	return average;
+}
+
+int main()
+{
+	int i=0;
+	float score1[5], score2[10];
+	puts("please enter 5 numbers of score1\n");
+	for (size_t i = 0; i < 5; i++)
+	{
+		scanf("%f", &score1[i]);
+	}
+	puts("\n");
+
+	while (i < 5)
+	{
+		printf("%f	", score1[i]);
+		i++;
+	}
+
+	puts("please enter 10 numbers of score2\n");
+	for (size_t i = 0; i < 10; i++)
+	{
+		scanf("%f", &score2[i]);
+	}
+	puts("\n");
+
+	i = 0;
+	while (i < 10)
+	{
+		printf("%f	", score2[i]);
+		i++;
+	}
+
+	//求平均成绩
+	puts("\n");
+	printf("score1平均成绩=%f\nscore2平均成绩=%f\n",average(score1,5),average(score2,10));
+	return 0;
+}
+
+
+
+
+
+
+
 

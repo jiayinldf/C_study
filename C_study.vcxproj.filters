@@ -45,5 +45,14 @@
     <ClCompile Include="power_n.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="print_str.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="delet_str.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="enter_str.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

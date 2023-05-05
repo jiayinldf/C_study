@@ -681,3 +681,32 @@ int main()
 }
 */
 //例7.20 有一个字符串，要求删除其中的空格，使用外部函数实现。
+/*#include<stdio.h>
+//#include<string.h>
+int main() 
+{
+	extern void enter_str(char str[]);
+	extern void delete_str(char str[], char ch);
+	extern void print_str(char str[]);
+	char str[80];
+	char ch;
+	puts("enter the sentence\n");
+	enter_str(str);
+	printf("%s\n", str);
+	puts("enter which char you want delete\n");
+	scanf_s("%c",&ch);
+	printf("%c", ch);
+	delete_str(str,ch);
+	puts("\n");
+
+	printf("the str is:%s\n",str);
+	print_str(str);
+	return 0;
+
+}
+*/
+
+
+
+
+

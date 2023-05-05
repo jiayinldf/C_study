@@ -1,4 +1,4 @@
-
+/*
 int power(int n)
 {
 	extern A;
@@ -12,3 +12,4 @@ int power(int n)
 	
 
 }
+*/

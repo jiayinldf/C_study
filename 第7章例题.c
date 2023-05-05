@@ -273,7 +273,7 @@ float average(float array[10])
 
 */
 
-//例7.11 有两个班级，分别为5名和10名学生，调用一个average函数，分别求这两个班的学生的平均成绩。
+/*例7.11 有两个班级，分别为5名和10名学生，调用一个average函数，分别求这两个班的学生的平均成绩。
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 float average(float array[], int n)
@@ -325,11 +325,298 @@ int main()
 	printf("score1平均成绩=%f\nscore2平均成绩=%f\n",average(score1,5),average(score2,10));
 	return 0;
 }
+*/
+
+/*例7.12 用选择法对数组中10个整数按由小到大排序
+#include<stdio.h>
+int main()
+{
+	void sort(int array[], int n);
+	int score[10], i, j, n=10;
+	puts("enter 10 number\n");
+	for (size_t i = 0; i < 10; i++)
+	{
+		scanf_s("%d", &score[i]);
+
+	}
+	puts("\n");
+
+	puts("the 10 number is\n");
+	for (size_t i = 0; i < 10; i++)
+	{
+		printf("%d	", score[i]);
+	}
+	puts("\n");
+
+	puts("the new sort is :\n");
+	sort(score,n);
+	for (size_t i = 0; i < 10; i++)
+	{
+		printf("%d	", score[i]);
+	}
+	
+	return 0;
+
+}
+
+void sort(int array[], int n)
+{
+	int i, j,t;
+	for (size_t i = 1; i < n; i++)
+	{
+
+		for (size_t j = 0; j < n-i; j++)
+		{
+			if (array[j] > array[j + 1])
+			{
+				t = array[j + 1];
+				array[j + 1] = array[j];
+				array[j] = t;
+			}
+		}
+	}
+}
+*/
+
+//例7.13有一个3×4的矩阵，求所有元素中的最大值
+/*#define _crt_secure_no_warnings
+#include<stdio.h>
+int main()
+{
+	int max(int array[3][4]);
+	//int a[3][4] = { {1,3,5,7},{2,4,6,8},{15,17,34,12} };
+	
+	int a[3][4],i, j;
+	int m=1, n=2;
+	
+	for (size_t i = 0; i < 3; i++)
+	{
+		printf("enter 4 number\n");
+		for (size_t j = 0; j < 4; j++)
+		{
+			scanf("%d", &a[i][j]);
+		}
+		
+	}
+
+	puts("the array a[3][4] is:\n");
+
+	for (size_t i = 0; i < 3; i++)
+	{
+		for (size_t j = 0; j < 4; j++)
+		{
+			printf("%d ", a[i][j]);
+		}
+		puts("\n");
+	}
+	
+	printf("the max number of a[3][4] is:%d\n ",max(a));
+	return 0;
+}
+
+int max(int array[][4])
+{
+	int i, j, max,m,n;
+	
+	for ( i = 0; i < 3; i++)
+	{
+		for ( j = 0,max=0; j < 4; j++)
+		{
+			if (array[i][j]>max)
+			{
+				max = array[i][j];
+				m = i;
+				n = j;
+
+			}
+		}
+
+	}
+	return (max);
+}
+*/
 
 
+//方法二 可以输出最大值所在的行和列
+/*#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int m=1, n=1;//定义全局变量即可在下面每一次变动中改变m，n的值而不会消失。
+int main()
+{
+	int max(int array[][4]);
+	//int a[3][4] = { {1,3,5,7},{2,4,6,8},{15,17,34,12} };
+
+	int a[3][4],i, j;
+	
+
+	for (int i = 0; i < 3; i++)
+	{
+		printf("enter 4 number\n");
+		for (int j = 0; j < 4; j++)
+		{
+			scanf("%d", &a[i][j]);
+		}
+
+	}
+
+	puts("the array a[3][4] is:\n");
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			printf("%d ", a[i][j]);
+		}
+		puts("\n");
+	}
+
+	printf("the max number of a[3][4] is:%d\nthe row is %d,col is %d\n ",max(a),m,n);
+	return 0;
+}
+
+int max(int array[][4])
+{
+	int i, j, max1 = array[0][0];//在开头就要定义max变量，而不是在for（j=0，max=array[0][0]）中定义
+
+	for ( i = 0; i < 3; i++)
+	{
+		for ( j = 0; j < 4; j++)
+		{
+			if (array[i][j] > max1)
+			{
+				max1 = array[i][j];
+				m = i + 1;
+				n = j + 1;
+
+			}
+			else
+			{
+				max1 = max1;
+				m = m;
+				n = n;
+			}
+
+		}
+
+	}
+	return max1;
+}
+*/
 
 
+//例7.14 有一个一维数组，内放10个学生成绩，写一个函数，当主函数调用此函数后，能求出平均分、最高分和最低分
 
+/*#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+float Max = 0, Min = 0;
+
+int main()
+{
+	float average(float array[],int n);
+	int i;
+	float a[10],ave;
+	
+	puts("enter 10 number\n");
+	for ( i = 0; i < 10; i++)
+	{
+		scanf("%f",&a[i]);
+	}
+	puts("the a[10] numbers are:\n");
+	for ( i = 0; i < 10; i++)
+	{
+		printf("%f,",a[i]);
+	}
+	puts("\n");
+	//float Max = a[0], Min = a[0];
+	ave=average(a,10);
+	printf("the ave=%f, Max=%f, Min=%f\n",ave,Max,Min);
+	return 0;
+
+}
+
+float average(float array[],int n)
+{
+	float ave = array[0], sum = 0;
+	int i;
+	Max = array[0], Min = array[0];//这里应该是直接给Max和Min值，而不是重新定义为float Max，Min；
+	for ( i = 1; i < n; i++)
+	{
+		if (array[i] >= Max)
+		{
+			Max = array[i];
+		}
+		
+		sum = sum + array[i];
+	}
+	for ( i = 0; i < n; i++)
+	{
+		if (array[i] <= Min)
+		{
+			Min = array[i];
+		}
+	}
+	ave = sum / n;
+
+	return ave;
+}
+*/
+
+
+//方法二：课本上的更简洁
+/* #define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+float Max = 0, Min = 0;
+
+int main()
+{
+	float average(float array[], int n);
+	int i;
+	float a[10], ave;
+
+	puts("enter 10 number\n");
+	for (i = 0; i < 10; i++)
+	{
+		scanf("%f", &a[i]);
+	}
+	puts("the a[10] numbers are:\n");
+	for (i = 0; i < 10; i++)
+	{
+		printf("%f,", a[i]);
+	}
+	puts("\n");
+
+	ave = average(a, 10);
+	printf("the ave=%f, Max=%f, Min=%f\n", ave, Max, Min);
+	return 0;
+
+}
+
+float average(float array[], int n)
+{
+	float ave = array[0], sum = 0;
+	int i;
+	Max = array[0], Min = array[0];//这里应该是直接给Max和Min值，而不是重新定义为float Max，Min；
+	for (i = 1; i < n; i++)
+	{
+		if (array[i] >= Max)
+		{
+			Max = array[i];
+		}
+		else if (array[i] <= Min)
+		{
+			Min = array[i];
+		}
+
+		sum = sum + array[i];
+	}
+	
+	ave = sum / n;
+
+	return ave;
+}
+*/
 
 
 

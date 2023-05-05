@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="power_n.c" />
     <ClCompile Include="print_message.c" />
     <ClCompile Include="print_star.c" />
     <ClCompile Include="第1章例题.c" />

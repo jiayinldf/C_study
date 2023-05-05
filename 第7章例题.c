@@ -665,3 +665,19 @@ int max(int a, int b, int c)
 }
 */
 
+//例7.19 给定b值，输入a和m，求a*b和a^m的值
+/*#include<stdio.h>
+ int A;
+int main()
+{
+	int power(int m);
+	int b,m;
+	puts("enter A and b and m\n");
+	scanf_s("%d,%d,%d",&A,&b,&m);
+	m = power(m);
+	printf("A*b=%d\nA^m=%d\n", A * b, m);
+	return 0;
+
+}
+*/
+//例7.20 有一个字符串，要求删除其中的空格，使用外部函数实现。

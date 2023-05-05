@@ -42,5 +42,8 @@
     <ClCompile Include="print_message.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="power_n.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -620,3 +620,47 @@ float average(float array[], int n)
 
 
 
+//例7.17 输出1到5的阶乘值
+/*#include<stdio.h>
+int main()
+{
+	int f(int n);
+	int i;
+	for ( i = 1; i <= 5; i++)
+	{
+		printf("%d!=%d\n", i, f(i));
+	}
+	return 0;
+}
+
+int f(int n)
+{
+	static int f = 1;
+	f = f * n;
+	return f;
+}
+*/
+
+//例7.18 练习外部变量声明。调用函数，求3个整数中的最大者。
+/*#include<stdio.h>
+int main()
+{
+	int max(int a, int b, int c);
+	extern int A, B, C;
+	puts("enter 3 number\n");
+	scanf_s("%d,%d,%d", &A, &B, &C);
+	printf("max=%d", max(A, B, C));
+	return 0;
+
+}
+
+int A, B, C;
+
+int max(int a, int b, int c)
+{
+	int m;
+	m = a > b ? a : b;
+	m = m > c ? m : c;
+	return m;
+}
+*/

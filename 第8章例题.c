@@ -178,7 +178,7 @@ int main()
 */
 
 //方法三：用指针变量指向数组元素
-
+/*
 #include<stdio.h>
 int main()
 {
@@ -192,8 +192,24 @@ int main()
 	return 0;
 }
 
+*/
 
-
-
-
+//方法四：用指针变量指向数组元素
+#include<stdio.h>
+int main()
+{
+	int a[10] ;
+	int i;
+	int * p=a;
+	puts("enter 10 number\n");
+	for ( i = 0; i < 10; i++)
+	{
+		scanf_s("%d", p++);
+	}
+	for (p = array; p < (array + 10); p++)
+	{
+		printf("%d ", *p);
+	}
+	return 0;
+}
 

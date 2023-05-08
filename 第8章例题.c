@@ -195,6 +195,7 @@ int main()
 */
 
 //方法四：用指针变量指向数组元素
+/*
 #include<stdio.h>
 int main()
 {
@@ -206,10 +207,13 @@ int main()
 	{
 		scanf_s("%d", p++);
 	}
-	for (p = array; p < (array + 10); p++)
+	p = a;
+	for (i=0;i<10;i++,p++)
 	{
 		printf("%d ", *p);
 	}
 	return 0;
 }
+*/
 
+//例8.6

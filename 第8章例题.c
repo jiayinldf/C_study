@@ -87,10 +87,110 @@ void swap(int * p1, int * p2)
 
 
 //8.5 输入3个整数a,b,c。要求按由小到大的顺序将他们输出。用函数实现。
+/*
+#include<stdio.h>
+int main()
+{
+	void exchange(int* q1, int* q2, int* q3);
+	
+	int a, b, c,i;
+	int * q1, * q2, * q3;
+	int array[3];
+	puts("enter 3 numbers:");
+	
+	for ( i = 0; i < 3; i++)
+	{
+		scanf_s("%d", &array[i]);
+	}
+	puts("");
+	puts("the 3 numbers are:");
+		for ( i = 0; i < 3; i++)
+	{
+		printf("%d	", array[i]);
+	}
+		a = array[0];
+		b = array[1];
+		c = array[2];
+
+	//puts("1");
+	q1 = &a;
+	q2 = &b;
+	q3 = &c;
+	exchange(q1, q2, q3);
+	puts("");
+	puts("");
+	printf("the order is:\n%d,%d,%d\n", a, b, c);
+	return 0;
+}
+
+void exchange(int *q1,int *q2, int *q3)
+{
+	void swap(int * p1, int * p2);
+	if (*q1 > *q2) swap(q1, q2);
+	if (*q1 > *q3) swap(q1, q3);
+	if (*q2 > *q3) swap(q2, q3);
+
+}
+
+void swap(int *p1 ,int *p2)
+{
+	int temp;
+	temp = *p1;
+	*p1 = *p2;
+	*p2 = temp;
+}
+
+*/
+
+//例8.6 有一个整形数组a，有10个元素，要求输出数组中的全部元素。
+
+//方法一：下标法
+/*
+#include<stdio.h>
+int main()
+{
+	int array[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int i;
+	for ( i = 0; i < 10; i++)
+	{
+		printf("%d ", array[i]);
+	}
+	return 0;
+}
+
+*/
 
 
 
+//方法二：通过数组名计算数组元素地址，找出元素的值
+/*
+#include<stdio.h>
+int main()
+{
+	int array[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int i;
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", *(array+i));
+	}
+	return 0;
+}
+*/
 
+//方法三：用指针变量指向数组元素
+
+#include<stdio.h>
+int main()
+{
+	int array[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int i;
+	int * p;
+	for (p = array; p < (array+10); p++)
+	{
+		printf("%d ", *p);
+	}
+	return 0;
+}
 
 
 

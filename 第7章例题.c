@@ -503,6 +503,81 @@ int max(int array[][4])
 }
 */
 
+//方法三 可以输出最大值所在的行和列（使用指针）
+/*
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main()
+{
+	int max(int array[][4]);
+	//int a[3][4] = { {1,3,5,7},{2,4,6,8},{15,17,34,12} };
+
+	int a[3][4],i, j,max1;
+	int m = 1, n = 1;
+	int* pm, * pn;
+	pm = &m;
+	pn = &n;
+
+
+
+	for (int i = 0; i < 3; i++)
+	{
+		printf("enter 4 number\n");
+		for (int j = 0; j < 4; j++)
+		{
+			scanf("%d", &a[i][j]);
+		}
+
+	}
+
+	puts("the array a[3][4] is:\n");
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			printf("%d ", a[i][j]);
+		}
+		puts("\n");
+	}
+	max1 = max(a, pm, pn);
+	printf("the max number of a[3][4] is:%d\nthe row is %d,col is %d\n ",max1,m,n);
+	return 0;
+}
+
+int max(int array[][4],int *pm,int *pn)
+{
+	int i, j, max1 = array[0][0];//在开头就要定义max变量，而不是在for（j=0，max=array[0][0]）中定义
+
+	for ( i = 0; i < 3; i++)
+	{
+		for ( j = 0; j < 4; j++)
+		{
+			if (array[i][j] > max1)
+			{
+				max1 = array[i][j];
+				*pm = i + 1;
+				*pn = j + 1;
+
+			}
+			else
+			{
+				max1 = max1;
+				*pm = *pm;
+				*pn = *pn;
+			}
+
+		}
+
+	}
+	return max1;
+}
+*/
+
+
+
+
 
 //例7.14 有一个一维数组，内放10个学生成绩，写一个函数，当主函数调用此函数后，能求出平均分、最高分和最低分
 

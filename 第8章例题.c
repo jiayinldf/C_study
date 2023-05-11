@@ -216,4 +216,115 @@ int main()
 }
 */
 
-//例8.6
+//例8.8 将数组a中n个整数按相反顺序存放。
+/*
+#include<stdio.h>
+int main() 
+{
+	void inv(int x[], int n);
+	int i, a[10] = { 3,7,9,11,0,6,7,5,4,2 };
+	printf("the original array :\n");
+	for ( i = 0; i < 10; i++)
+	{
+		printf("%d", a[i]);
+	}
+	printf("\n");
+	inv(a, 10);
+	printf("The array has been inverted:\n");
+	for ( i = 0; i < 10; i++)
+	{
+		printf("%d", a[i]);
+	}
+	puts("");
+	return 0;
+
+}
+
+void inv(int x[], int n)
+{
+	int temp, i, j, m = (n - 1) / 2;
+	for ( i = 0; i < m; i++)
+	{
+		j = n - 1 - i;
+		temp = x[i]; x[i] = x[j]; x[j] = temp;
+
+	}
+	return;
+}
+*/
+//方法二:改用指针方法
+/*
+#include<stdio.h>;
+int main()
+{
+	void inv(int* x, int n);
+	int i, a[10] = { 3,7,9,11,0,6,7,5,4,2 };
+	printf("the original array :\n");
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d", a[i]);
+	}
+	printf("\n");
+	inv(a, 10);
+	printf("The array has been inverted:\n");
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d", a[i]);
+	}
+	puts("");
+	return 0;
+}
+
+
+
+void inv(int* x, int n)
+{
+	int* p, temp, * i, * j, m = (n - 1) / 2;
+	i = x; j = x + n - 1; p = x + m;//i,j都是指针值，这里的指针就是几个指针数字在运算，不是变量的原值
+	for (; i < p; i++, j--)
+	{
+		temp = *i; *i = *j; *j = temp;
+	}
+	return;
+}
+*/
+
+//例8.9 改写例题8.8,用指针变量做实参
+/*
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	void inv(int* x, int n);
+	int i, arr[10], * p = arr;
+	printf("the original array:\n");
+	for ( i = 0; i < 10; i++,p++)
+	{
+		scanf("%d",p);
+	}
+	puts("");
+	p = arr;
+	inv(p,10);
+	printf("The array has been inverted:\n");
+	for (p=arr; p < arr+10; p++)
+	{
+		printf("%d",*p);
+	}
+	puts("");
+	return 0;
+}
+
+void inv(int* x, int n)
+{
+	int* p, m, temp, * i, * j;
+	m = (n - 1) / 2;
+	i = x; j = x + n - 1; p = x + m;
+	for ( ; i < p; i++,j--)
+	{
+		temp = *i; *i = *j; *j = temp;
+	}
+	return;
+}
+
+*/
+

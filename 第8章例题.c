@@ -328,3 +328,90 @@ void inv(int* x, int n)
 
 */
 
+//例8.10 用指针方法对10个整数按由大到小顺序排序
+/*
+#include<stdio.h>
+int main()
+{
+	void sort(int x[], int n);
+	int i, * p, a[10];
+	p = a;
+	printf("enter 10 integer numbers:");
+	for ( i = 0; i < 10; i++)
+	{
+		scanf_s("%d", p++);
+
+	}
+	p = a;
+	sort(p, 10);
+	for ( p = a,i=0; i <10 ; i++)
+	{
+		printf("%d  ", *p);
+		p++;
+	}
+	printf("\n");
+	return 0;
+}
+
+void sort(int x[], int n)
+{
+	int i, j, k, t;
+	for ( i = 0; i < n-1; i++)
+	{
+		k = i;
+		for ( j = i+1; j < n; j++)
+		{
+			if (x[j]>x[k])
+			{
+				k = j;
+				if (k!=i)
+				{
+					t = x[i];
+					x[i] = x[k];
+					x[k] = t;
+				}
+			}
+		}
+	}
+}
+*/
+
+
+
+//方法二：普通方法，再复习一遍
+/*
+#include<stdio.h>
+int main()
+{
+	void sort(int a[], int n);
+	int x[10] = { 12,34,5,689,-43,56,-21,0,24,65};
+	int n = 10,i;
+	sort(x, n);
+	for ( i = 0; i < n; i++)
+	{
+		printf("%d ", x[i]);
+	}
+	return 0;
+}
+
+void sort(int a[], int n)
+{
+	int i, j, t;
+	for ( i = 0; i < n-1; i++)
+	{
+		
+		for ( j = i+1; j < n; j++)
+		{
+			if (a[i]<a[j])
+			{
+				t=a[j];
+				a[j] = a[i];
+				a[i] = t;
+
+			}
+		}
+		
+	}
+	return;
+}
+*/

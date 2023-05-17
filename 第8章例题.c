@@ -456,3 +456,28 @@ int main()
 	return 0;
 }
 */
+
+//例8.13 输出二维数组任一行任一列元素的值(使用指针方法)
+#include<stdio.h>
+int main()
+{
+	int a[3][4] = { 1,3,5,7,9,11,13,15,17,19,21,23 };
+	int i, j, * p;
+	p = a[0];
+	for ( ; p < a[0] + 12; p++)
+	{
+		if ((p-a[0]) % 4 == 0)
+		{
+			puts("");
+		}
+		printf("%4d", *p);
+
+	}
+	puts("");
+	printf("enter row\n");
+	scanf_s("%d",&i);
+	puts("enter col\n");
+	scanf_s("%d",&j);
+	p = a;
+	printf("%d", *(p+(4 * i + j)));
+}

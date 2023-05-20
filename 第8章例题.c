@@ -485,3 +485,26 @@ int main()
 }
 */
 //·½·¨¶þ£º
+/*
+#include<stdio.h>
+int main()
+{
+	int i, j,*p1, (* p)[4], a[3][4] = {1,3,5,7,9,11,13,15,17,19,21,23};
+	
+	for (p1=a; p1 < a[0] + 12; p1++)
+	{
+		if ((p1-a)%4==0)
+		{
+			puts("");
+		}
+		printf("%d	",*p1);
+	}
+	i = 0;
+	puts("");
+	puts("enter row,col\n");
+	scanf_s("%d,%d", &i, &j);
+	p = a;
+	printf("row %d,col %d is %4d", i, j, *(*(p + i) + j));
+	return 0;
+}
+*/

@@ -508,3 +508,74 @@ int main()
 	return 0;
 }
 */
+
+/*
+#include<stdio.h>
+int main()
+{
+	int a[4] = { 1,3,5,7 };
+	int(*p)[4];
+	p = &a;
+	printf("%d\n", (*p)[3]);
+	return 0;
+}
+*/
+
+//例8.14 有一个班，3个学生，各学4门课，计算总平均分数以及第n个学生的成绩。
+#include<stdio.h>
+int main()
+{
+	void average(float* p, int n);
+	void search(float(*p)[4], int n);
+	float score[3][4] = { {65,67,70,60},{80,87,90,81},{90,99,100,98} };
+	average(*score, 12);
+	search(score, 2);
+	return 0;
+}
+
+void average(float* p, int n)
+{
+	float* p_end;
+	float sum = 0, aver;
+	p_end = p + n - 1;
+	for ( ; p <= p_end; p++)
+	{
+		sum = sum + (*p);
+	}
+	aver = sum / n;
+	printf("average=%5.2f\n", aver);
+}
+
+void search(float(*p)[4], int n)
+{
+	int i;
+	printf("the score of No.%d are:\n", n);
+	for ( i = 0; i < 4; i++)
+	{
+		printf("%5.2f ", *(*(p + n) + i));
+	}
+	printf("\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

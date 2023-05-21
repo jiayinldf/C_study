@@ -566,8 +566,8 @@ int main()
 	void average(float* p, int n);
 	void search(float(*p)[4], int n);
 	float score[3][4] = { {65,67,70,60},{80,87,90,81},{90,99,100,98} };
-	average(*score, 12);
-	search(score, 2);
+	average(*score, 12);//*score代表首元素的地址
+	search(score, 2);//score代表起始行的地址
 	return 0;
 }
 

@@ -522,6 +522,7 @@ int main()
 */
 
 //例8.14 有一个班，3个学生，各学4门课，计算总平均分数以及第n个学生的成绩。
+/*
 #include<stdio.h>
 int main()
 {
@@ -556,9 +557,38 @@ void search(float(*p)[4], int n)
 	}
 	printf("\n");
 }
+*/
+
+//自己写的
+#include<stdio.h>
+int main()
+{
+
+}
+
+void average(float* p, int n)
+{
+	float * p_end = p + n;
+	float sum = 0, average = 0;
+	for ( ; p< p_end; p++)
+	{
+		sum = sum + *p;
+	}
+	average = sum / n;
+	printf("the average=%5.2f", average);
+	
+}
 
 
+void search(float(*p)[4], int n)
+{
+	float;
+	printf("the score of No.%d are:\n", n);
+	for ( i = 0; i < length; i++)
+	{
 
+	}
+}
 
 
 

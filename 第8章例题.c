@@ -560,6 +560,7 @@ void search(float(*p)[4], int n)
 */
 
 //自己写的
+/*
 #include<stdio.h>
 int main()
 {
@@ -596,6 +597,121 @@ void search(float(*p)[4], int n)
 		printf("%5.2f ", *(*(p + n) + i));
 		puts("");
 	}
+}
+*/
+
+//例8.15 在例题8.14的基础上，查找一门以上课程不及格的学生，输出他们的全部课程成绩
+/*
+#include<stdio.h>
+int main()
+{
+	void search(float(*p)[4], int n);
+	float score[3][4]= { {65,57,70,60},{58,87,90,81},{90,99,100,98} };
+	search(score, 3);
+	return 0;
+}
+
+void search(float(*p)[4], int n)
+{
+	int i, j, flag;
+	for ( j = 0; j < n; j++)
+	{
+		flag = 0;
+		for ( i = 0; i < 4; i++)
+		{
+			if (*(*(p + j) + i) < 60) flag = 1;
+		}
+		if (flag==1)
+		{
+			printf("NO.%d fails,his scores are:\n", j + 1);
+			for ( i = 0; i < 4; i++)
+			{
+				printf("%5.1f", *(*(p + j) + i));
+			}
+			puts("");
+		}
+	}
+}
+*/
+//再写一遍
+/*
+#include<stdio.h>
+int main()
+{
+	void search(float(*p)[4], int n);
+	float score[3][4]= { {65,57,70,60},{58,87,90,81},{90,99,100,98} };
+	search(score, 3);
+	return 0;
+}
+
+void search(float(*p)[4], int n)
+{
+	int i, j, flag;
+	
+	for ( j = 0; j < n; j++)
+	{
+		flag = 0;
+		for ( i = 0; i < 4; i++)
+		{
+			if (*(*(p+j)+i)<60)
+			{
+				flag = 1;
+			}
+		
+		}
+		if (flag==1)
+		{
+			printf("NO.%d fails,his scores are:\n", j + 1);
+			for ( i = 0; i < 4; i++)
+			{
+				printf("%5.1f", *(*(p + j) + i));
+			}
+		}
+		puts("");
+	}
+}
+*/
+
+//例8.16 定义一个字符数组，在其中存放字符串“I love China！”，输出该字符串和第8个字符。
+/*
+#include<stdio.h>
+int main()
+{
+	int i;
+	char string[] = "I love China！";
+	printf("%s\n", string);
+	printf("%c\n", string[7]);
+	return 0;
+}
+*/
+//例8.17 通过字符指针变量输出一个字符串
+/*
+#include<stdio.h>
+int main()
+{
+	char* string = "I love China!";
+	printf("%s\n", string);
+	return 0;
+}
+*/
+//例8.18 将字符串a复制为字符串b，然后输出字符串b。
+#include<stdio.h>
+int main()
+{
+	char a[] = "I am a student.", b[20];
+	int i;
+	for ( i = 0; *(a+i)!='\0'; i++)
+	{
+		*(b + i) = *(a + i);
+	}
+	*(b + i) = '\0';
+	printf("string a is :%s\n", a);
+	printf("string b is:");
+	for ( i = 0; b[i]!='\0'; i++)
+	{
+		printf("%c", b[i]);
+	}printf("\n");
+	return 0;
 }
 
 

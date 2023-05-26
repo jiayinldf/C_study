@@ -774,7 +774,7 @@ int main()
 //例8.20 用函数调用实现字符串的复制
 //解题思路：定义一个函数copy_string用来实现字符串复制的功能，在主调函数中调用此函数，此函数的形参和实参可以分别用字符数组名或字符指针变量。分别编程，以供分析比较。
 //（1）用字符数组名作为函数参数
-
+/*
 #include<stdio.h>
 int main()
 {
@@ -799,6 +799,7 @@ void copy_string(char from[], char to[])
 	}
 	to[i] = '\0';
 }
+*/
 
 
 //再写一遍
@@ -830,6 +831,59 @@ void copy_string(char from[], char to[])
 	
 }
 */
+
+//(2)用字符型指针变量作实参
+/*
+#include<stdio.h>
+int main()
+{
+	void copy_string(char from[], char to[]);
+	char a[] = "I am a student.";
+	char b[] = "You are a teacher.";
+	char* from = a, * to = b;
+	printf("string a=%s\nsting b=%s\n", a, b);
+	printf("\ncopy string a to b:\n");
+	copy_string(from, to);
+	printf("string a=%s\nstring b=%s\n", a, b);
+	return 0;
+}
+
+void copy_string(char from[], char to[])
+{
+	int i = 0;
+	while (from[i]!='\0')
+	{
+		to[i] = from[i];
+		i++;
+				
+	}
+	to[i] = '\0';
+
+}
+*/
+
+//(3)用字符指针变量作形参和实参
+#include<stdio.h>
+int main()
+{
+	void copy_string(char* from, char* to);
+	char* a = "I am a student.";
+	char b[] = "You are a teacher.";
+	char *p = b;
+	printf("string a=%s\nstring b=%s\n", a, b);
+	copy_string(a, p);
+	printf("%s\n%s\n", a, b);
+	return 0;
+}
+
+void copy_string(char* from, char* to)
+{
+	for ( ; *from!='\0'; from++,to++)
+	{
+		*to = *from;
+	}
+	*to = '\0';
+}
 
 
 

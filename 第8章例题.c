@@ -863,6 +863,7 @@ void copy_string(char from[], char to[])
 */
 
 //(3)用字符指针变量作形参和实参
+/*
 #include<stdio.h>
 int main()
 {
@@ -884,6 +885,21 @@ void copy_string(char* from, char* to)
 	}
 	*to = '\0';
 }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

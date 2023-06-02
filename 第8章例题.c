@@ -887,9 +887,83 @@ void copy_string(char* from, char* to)
 }
 */
 
+//例题8.21改变指针变量的值
+/*
+#include<stdio.h>
+int main()
+{
+	char* a = "I love China!";
+	a = a + 7;
+	printf("%s\n", a);
+	return 0;
+}
+*/
+
+//例8.22用函数求整数a和b中的大者。
+//（1）通过函数名调用函数
+/*#include<stdio.h>
+int main()
+{
+	int max(int x, int y);
+	int a, b,c;
+	printf("enter a ,b\n");
+	scanf_s("%d,%d", & a, &b);
+	c = max(a, b);
+	printf("max=%d	\n", c);
+	return 0;
 
 
 
+}
+
+int max(int x, int y)
+{
+	int z;
+	if (x > y)
+	{
+		z = x;
+
+	}
+	else
+		z = y;
+	return z;
+
+}
+*/
+
+//(2)通过指针变量调用它所指向的函数
+
+#include<stdio.h>
+int main()
+{
+	int max(int x, int y);
+	int (*p)(int, int);
+
+	int a, b, c;
+	p = max;
+	printf("enter a ,b\n");
+	scanf_s("%d,%d", &a, &b);
+	c = (*p)(a, b);
+	printf("max=%d	\n", c);
+	return 0;
+
+
+
+}
+
+int max(int x, int y)
+{
+	int z;
+	if (x > y)
+	{
+		z = x;
+
+	}
+	else
+		z = y;
+	return z;
+
+}
 
 
 

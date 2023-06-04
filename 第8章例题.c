@@ -932,7 +932,7 @@ int max(int x, int y)
 */
 
 //(2)通过指针变量调用它所指向的函数
-
+/*
 #include<stdio.h>
 int main()
 {
@@ -964,10 +964,149 @@ int max(int x, int y)
 	return z;
 
 }
+*/
+
+//例8.23 输入两个整数，然后让用户选择1或2，选1时调用max函数，输出二者中的大数，选2时调用min函数，输出二者中的小数。
+/*
+#include<stdio.h>
+int main()
+{
+	int max(int x, int y);
+	int min(int x, int y);
+	int (* p)(int, int);
+	int a, b, c,n;
+	p = NULL;//书中没有初始化p，执行程序时会报错
+	printf("enter a and b\n");
+	scanf_s("%d,%d", &a, &b);
+	printf("choose 1 or 2:");
+	scanf_s("%d", &n);
+	if (n==1)
+	{
+		p = max;
+	}
+	else if (n==2)
+	{
+		p = min;
+	}
+	c = (*p)(a, b);
+	printf("a=%d,b=%d\n", a, b);
+	if (n == 1)
+	{
+		printf("max=%d\n", c);
+	}
+	else
+		printf("min=%d\n", c);
+	return 0;
+		
+
+}
+
+int max(int x, int y)
+{
+	int z;
+	if (x > y)
+	{
+		z = x;
+	}
+	else
+		z = y;
+	return(z);
+}
+
+int min(int x, int y)
+{
+	int z;
+	if (x > y)
+	{
+		z = y;
+	}
+	else
+		z = x;
+	return(z);
+}
+*/
+
+//例8.24 有两个整数a和b，由用户输入1,2或3。如输入1，程序就给出a和b中的大者，输入2，就给出a和b中的小者，输入3则求a和b之和。
+/*
+#include<stdio.h>
+int main()
+{
+	int fun(int x, int y, int (*p)(int, int));
+	int add(int x, int y);
+	int max(int x, int y);
+	int min(int x, int y);
+	int (*p)(int, int);
+	int a=34, b=-21, n;
+	p = NULL;//书中没有初始化p，执行程序时会报错
+
+	printf("choose 1 ,2 or 3:");
+	scanf_s("%d", &n);
+	if (n == 1)
+	{
+		fun(a,b,max);
+	}
+	else if (n == 2)
+	{
+		fun(a, b, min);
+	}
+	else if (n == 3)
+	{
+		fun(a, b, add);
+	}
+
+	return 0;
+
+
+}
+
+
+
+int fun(int x, int y, int (*p)(int, int))
+{
+	int result;
+	result = (*p)(x, y);
+	printf("%d\n", result);
+}
 
 
 
 
+int max(int x, int y)
+{
+	int z;
+	if (x > y)
+	{
+		z = x;
+	}
+	else
+		z = y;
+	printf("max=");
+	return(z);
+}
+
+int min(int x, int y)
+{
+	int z;
+	if (x > y)
+	{
+		z = y;
+	}
+	else
+		z = x;
+	printf("min=");
+	return(z);
+}
+
+int add(int x, int y)
+{
+	int z;
+	z = x + y;
+	printf("sum=");
+	return (z);
+
+}
+
+*/
 
 
 

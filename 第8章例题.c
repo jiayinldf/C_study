@@ -13,6 +13,18 @@ int main()
 }
 */
 
+
+
+
+
+
+
+
+
+
+
+
+
 //理解 *p,p,以及a，b的概念
 /*
 #include<stdio.h>
@@ -1110,6 +1122,7 @@ int add(int x, int y)
 
 
 //例题8.25 有a个学生，每个学生有b门课程的成绩。要求在用户输入学生序号以后，能输出该学生的全部成绩。用指针函数来实现。
+/*
 #include<stdio.h>
 int main()
 {
@@ -1135,12 +1148,48 @@ float* search(float(*pointer)[4], int n)
 	pt = *(pointer + n);
 	return (pt);
 }
+*/
 
 
+//例题8.26 对例8.26中的学生，找出其中有不及格的课程的学生及其学生号
+//结题思路：main函数不是只调用一次search函数，而是先后调用3次search函数，在search函数中检查3个学生有无不及格的课程，如果有就返回该学生的0号课程的地址&score[i][0],否则返回NULL。在main函数中检查返回值，输出有不及格学生4门课的成绩。
+/*
+#include<stdio.h>
+int main()
+{
+	
+	float* search(float(*pointer)[4]);
+	float score[][4] = { {60,70,80,90},{56,89,67,88},{34,78,90,66} };
+	float* p;
+	int i, j;
+	for (i = 0; i < 3; i++)
+	{
+		p = search(score + i);
+		if (p == *(score +i))
+		{
+			printf("No.%d score:", i);
+				for ( j = 0; j < 4; j++)
+				{
+					printf("%5.2f", *(p + j));
+					
+				}
+				printf("\n");
+		}
+		
+	}
+	return 0;
+}
 
-
-
-
+float* search(float(*pointer)[4])
+{
+	int i = 0;
+	float* pt;
+	pt = NULL;
+	for (; i < 4; i++)
+		if (*(*pointer + i) < 60) pt = *pointer;
+	return (pt);
+}
+*/
 
 
 

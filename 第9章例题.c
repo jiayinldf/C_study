@@ -274,6 +274,71 @@ int main()
 
 
 
+//9.8 建立简单的静态链表：建立一个简单链表，它由3个学生数据的结点组成，要求输出各结点中的数据。
+/*
+#include<stdio.h>
+struct Student
+{
+	int num;
+	float score;
+	struct Student * next;
+};
+
+int main()
+{
+	struct Student a, b, c, * head, * p;//定义三个结构体变量，a，b，c，作为链表的结点
+	a.num = 10101; a.score = 89.5;
+	b.num = 10103; b.score = 90;
+	c.num = 10107; c.score = 85;
+	head = &a;
+	a.next = &b;
+	b.next = &c;
+	c.next = NULL;
+	p = head;//使p指向a结点
+	do
+	{
+		printf("%ld %5.1f\n", p->num, p->score);
+		p = p->next;
+	} while (p != NULL);
+	return 0;
+
+}
+
+*/
+
+/*
+#include<stdio.h>
+struct Student
+{
+	int num;
+	float score;
+	struct Student* next;
+};
+
+int main()
+{
+	struct Student a, b, c, * p;//定义三个结构体变量，a，b，c，作为链表的结点
+	a.num = 10101; a.score = 89.5;
+	b.num = 10103; b.score = 90;
+	c.num = 10107; c.score = 85;
+	p = &a;
+	a.next = &b;
+	b.next = &c;
+	c.next = NULL;
+	//p = head;//使p指向a结点
+	do
+	{
+		printf("%ld %5.1f\n", p->num, p->score);
+		p = p->next;
+	} while (p != NULL);
+	return 0;
+
+}
+*/
+
+
+//例题9.9 建立动态链表 写一个函数建立一个有3名学生数据的单向动态链表
+
 
 
 

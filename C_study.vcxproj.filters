@@ -60,5 +60,8 @@
     <ClCompile Include="第9章例题.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="第10章例题.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

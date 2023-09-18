@@ -119,5 +119,92 @@ int main()
 
 	fclose(fp); // 关闭文件
 	return 0;
-
 }
+*/
+<<<<<<< HEAD
+
+
+/*
+=======
+>>>>>>> 2fb536ab9771ed7a6d6b635e15794a56aa33834f
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+	FILE* fp;
+	char str[3][10], temp[10];
+	int i, j, k, n = 3;
+	printf("Enter strings:\n");
+
+	for (i = 0; i < n; i++) {
+		fgets(str[i], sizeof(str[i]), stdin);
+		// 删除末尾的换行符
+		if (str[i][strlen(str[i]) - 1] == '\n') {
+			str[i][strlen(str[i]) - 1] = '\0';
+		}
+	}
+
+	for (i = 0; i < n - 1; i++) {
+		k = i;
+		for (j = i + 1; j < n; j++) {
+			if (strcmp(str[k], str[j]) > 0) {
+				k = j;
+			}
+		}
+		if (k != i) {
+			strcpy(temp, str[i]);
+			strcpy(str[i], str[k]);
+			strcpy(str[k], temp);
+		}
+	}
+
+	if ((fp = fopen("C:\\MyProgram\\C_study\\string.dat", "w")) == NULL) {
+		printf("Can't open file!\n");
+		exit(0);
+	}
+
+	printf("\nThe new sequence:\n");
+	for (i = 0; i < n; i++) {
+		fputs(str[i], fp);
+		fputs("\n", fp);
+		printf("%s\n", str[i]);
+	}
+
+	fclose(fp); // 关闭文件
+
+	return 0;
+}
+<<<<<<< HEAD
+*/
+
+//例题10.4 从键盘输入10个学生的有关数据，然后把他们转存到磁盘文件上去。
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 10
+struct Student_type
+{
+	char name[10];
+	int num;
+	int age;
+	char addr[15];
+}stud[SIZE];
+
+int main()
+{
+	int i;
+	FILE *fp;
+	if ((fp=fopen("stu.dat","rb")) == NULL)
+	{
+		printf("cannot open file\n");
+		exit(0);
+	}
+	for ( i = 0; i < SIZE; i++)
+	{
+		fread(&stud[i], sizeof(struct Student_type), 1, fp);
+		printf("%-10s %4d %4d %-15s\n", stud[i].name, stud[i].num, stud[i].age, stud[i].addr);
+	}
+	fclose(fp);
+	return 0;
+}
+
